@@ -1,0 +1,49 @@
+// Prisma schema for Coffee Suggester - PostgreSQL version
+// Copy this to schema.prisma for production deployment with PostgreSQL
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Stores quiz results with shareable links
+model Result {
+  id             String   @id @default(cuid())
+  createdAt      DateTime @default(now())
+  shareSlug      String   @unique
+  answers        Json     // Quiz answers as JSON
+  recommendation Json     // Recommendation output as JSON
+
+  @@index([shareSlug])
+  @@index([createdAt])
+}
+
+// Privacy-conscious analytics events
+// Stores aggregated data only, no personal information
+model AnalyticsEvent {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  type      String   // quiz_start, quiz_complete, recommendation_view, cafe_search
+  payload   Json     // Event data (aggregated, no PII)
+
+  @@index([type])
+  @@index([createdAt])
+}
+
+// Cache for cafe search results to reduce API calls
+model CafeSearchCache {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  query     String   // Search query or city name
+  lat       Float    // Latitude
+  lng       Float    // Longitude
+  radius    Int      // Search radius in meters
+  response  Json     // Cafe results as JSON
+
+  @@unique([lat, lng, radius])
+  @@index([createdAt])
+}
