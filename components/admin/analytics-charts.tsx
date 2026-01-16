@@ -96,11 +96,7 @@ export function AnalyticsCharts({ data }: AnalyticsChartsProps) {
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={activityData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e8c49c" />
-                <XAxis
-                  dataKey="date"
-                  tick={{ fontSize: 12 }}
-                  stroke="#824b34"
-                />
+                <XAxis dataKey="date" tick={{ fontSize: 12 }} stroke="#824b34" />
                 <YAxis tick={{ fontSize: 12 }} stroke="#824b34" />
                 <Tooltip
                   contentStyle={{

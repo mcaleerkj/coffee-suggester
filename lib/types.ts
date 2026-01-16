@@ -22,22 +22,26 @@ export const QuizAnswersSchema = z.object({
   temperature: z.enum(['hot', 'iced', 'both']),
   flavorPreference: z.enum(['chocolatey', 'fruity', 'nutty', 'balanced']),
   coffeeContext: z.enum(['home', 'cafe', 'both']),
-  equipment: z.enum([
-    'none',
-    'drip',
-    'french-press',
-    'pour-over',
-    'aeropress',
-    'moka-pot',
-    'espresso',
-    'pods',
-  ]).optional(),
+  equipment: z
+    .enum([
+      'none',
+      'drip',
+      'french-press',
+      'pour-over',
+      'aeropress',
+      'moka-pot',
+      'espresso',
+      'pods',
+    ])
+    .optional(),
   wantsCafeSuggestions: z.boolean().optional(),
-  location: z.object({
-    city: z.string().optional(),
-    lat: z.number().optional(),
-    lng: z.number().optional(),
-  }).optional(),
+  location: z
+    .object({
+      city: z.string().optional(),
+      lat: z.number().optional(),
+      lng: z.number().optional(),
+    })
+    .optional(),
   acidityTolerance: z.enum(['normal', 'low-acidity']).optional(),
   currentOrder: z.string().optional(), // Free text for their go-to order
 });
@@ -57,12 +61,7 @@ export type FlavorProfile =
 export type RoastLevel = 'light' | 'medium' | 'medium-dark' | 'dark';
 
 // Origin regions
-export type OriginStyle =
-  | 'latin-america'
-  | 'east-africa'
-  | 'indonesia'
-  | 'blend'
-  | 'single-origin';
+export type OriginStyle = 'latin-america' | 'east-africa' | 'indonesia' | 'blend' | 'single-origin';
 
 // Brew methods
 export type BrewMethod =

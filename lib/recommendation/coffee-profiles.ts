@@ -18,13 +18,13 @@ export const coffeeProfiles: CoffeeRecommendation[] = [
     tags: ['smooth', 'nutty', 'beginner-friendly', 'versatile'],
     acidityLevel: 'low',
     bodyLevel: 'medium',
-    popularBrands: ['Lavazza', 'Illy', 'Peet\'s'],
+    popularBrands: ['Lavazza', 'Illy', "Peet's"],
   },
   {
     id: 'colombian-classic',
     name: 'Colombian Classic',
     description:
-      'Well-balanced with sweet caramel notes and a clean finish. Colombia\'s high altitude produces consistently excellent coffee that works beautifully with or without milk.',
+      "Well-balanced with sweet caramel notes and a clean finish. Colombia's high altitude produces consistently excellent coffee that works beautifully with or without milk.",
     flavorProfile: 'caramel-smooth',
     roastLevel: 'medium',
     originStyle: 'latin-america',
@@ -46,7 +46,7 @@ export const coffeeProfiles: CoffeeRecommendation[] = [
     tags: ['bold', 'earthy', 'low-acid', 'intense'],
     acidityLevel: 'low',
     bodyLevel: 'full',
-    popularBrands: ['Starbucks Sumatra', 'Peet\'s Sumatra', 'Blue Bottle'],
+    popularBrands: ['Starbucks Sumatra', "Peet's Sumatra", 'Blue Bottle'],
   },
   // Fruity/Bright profiles
   {
@@ -133,7 +133,7 @@ export const coffeeProfiles: CoffeeRecommendation[] = [
     tags: ['smoky', 'bold', 'dark', 'intense'],
     acidityLevel: 'low',
     bodyLevel: 'full',
-    popularBrands: ['Peet\'s', 'Starbucks French Roast', 'Community Coffee'],
+    popularBrands: ["Peet's", 'Starbucks French Roast', 'Community Coffee'],
   },
   // Balanced/Mild profiles
   {
@@ -148,7 +148,7 @@ export const coffeeProfiles: CoffeeRecommendation[] = [
     tags: ['balanced', 'everyday', 'approachable', 'versatile'],
     acidityLevel: 'medium',
     bodyLevel: 'medium',
-    popularBrands: ['Starbucks Pike Place', 'Dunkin\' Original', 'Folgers'],
+    popularBrands: ['Starbucks Pike Place', "Dunkin' Original", 'Folgers'],
   },
   {
     id: 'breakfast-blend',
@@ -162,7 +162,7 @@ export const coffeeProfiles: CoffeeRecommendation[] = [
     tags: ['light', 'morning', 'bright', 'clean'],
     acidityLevel: 'medium',
     bodyLevel: 'light',
-    popularBrands: ['Green Mountain', 'Starbucks Blonde', 'Peet\'s'],
+    popularBrands: ['Green Mountain', 'Starbucks Blonde', "Peet's"],
   },
   // Cold brew specific
   {
@@ -192,7 +192,7 @@ export const coffeeProfiles: CoffeeRecommendation[] = [
     tags: ['convenient', 'pods', 'quick', 'consistent'],
     acidityLevel: 'medium',
     bodyLevel: 'medium',
-    popularBrands: ['Nespresso', 'Peet\'s K-Cups', 'Lavazza Pods'],
+    popularBrands: ['Nespresso', "Peet's K-Cups", 'Lavazza Pods'],
   },
 ];
 

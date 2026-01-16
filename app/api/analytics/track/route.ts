@@ -21,10 +21,7 @@ export async function POST(request: NextRequest) {
     // Validate
     const validationResult = TrackEventSchema.safeParse(body);
     if (!validationResult.success) {
-      return NextResponse.json(
-        { error: 'Invalid event data' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Invalid event data' }, { status: 400 });
     }
 
     const { type, payload } = validationResult.data;

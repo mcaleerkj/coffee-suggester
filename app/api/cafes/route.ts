@@ -80,10 +80,7 @@ export async function GET(request: NextRequest) {
     if (city && (!lat || !lng)) {
       const geoResult = await geocodeCity(city);
       if (!geoResult) {
-        return NextResponse.json(
-          { error: `Could not find location: ${city}` },
-          { status: 404 }
-        );
+        return NextResponse.json({ error: `Could not find location: ${city}` }, { status: 404 });
       }
       searchLat = geoResult.lat;
       searchLng = geoResult.lng;

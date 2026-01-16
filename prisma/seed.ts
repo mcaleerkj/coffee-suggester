@@ -92,7 +92,9 @@ async function main() {
 
   // Seed sample results
   for (const answers of sampleQuizzes) {
-    const recommendation = generateRecommendation(answers as Parameters<typeof generateRecommendation>[0]);
+    const recommendation = generateRecommendation(
+      answers as Parameters<typeof generateRecommendation>[0]
+    );
     const shareSlug = generateShareSlug();
 
     await prisma.result.create({

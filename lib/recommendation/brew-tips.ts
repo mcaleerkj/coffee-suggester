@@ -19,7 +19,7 @@ export const brewTipsData: Record<BrewMethod, BrewTips> = {
     grindSize: 'Coarse - like sea salt',
     temperature: '200°F (93°C) - just off boiling',
     brewTime: '4 minutes steep, then press slowly',
-    tip: 'Don\'t press too hard or fast - let the grounds settle and press gently to avoid bitter sediment.',
+    tip: "Don't press too hard or fast - let the grounds settle and press gently to avoid bitter sediment.",
   },
   'pour-over': {
     method: 'pour-over',
@@ -39,7 +39,7 @@ export const brewTipsData: Record<BrewMethod, BrewTips> = {
   },
   'moka-pot': {
     method: 'moka-pot',
-    ratio: 'Fill the basket loosely, don\'t tamp',
+    ratio: "Fill the basket loosely, don't tamp",
     grindSize: 'Fine - but not espresso fine',
     temperature: 'Start with pre-heated water for less bitterness',
     brewTime: '4-5 minutes on medium-low heat',
@@ -59,7 +59,7 @@ export const brewTipsData: Record<BrewMethod, BrewTips> = {
     grindSize: 'Very coarse - like raw sugar',
     temperature: 'Room temp or refrigerated',
     brewTime: '12-24 hours',
-    tip: 'Longer isn\'t always better. 12-16 hours gives you smooth sweetness without over-extraction.',
+    tip: "Longer isn't always better. 12-16 hours gives you smooth sweetness without over-extraction.",
   },
   pods: {
     method: 'pods',
@@ -86,10 +86,7 @@ export function getQuickTip(method: BrewMethod): string {
 /**
  * Get the best brew method for a coffee context
  */
-export function suggestBrewMethod(
-  equipment: string | undefined,
-  temperature: string
-): BrewMethod {
+export function suggestBrewMethod(equipment: string | undefined, temperature: string): BrewMethod {
   // If they want iced, suggest cold brew if no equipment, otherwise their equipment
   if (temperature === 'iced') {
     if (!equipment || equipment === 'none') {
@@ -109,5 +106,5 @@ export function suggestBrewMethod(
     pods: 'pods',
   };
 
-  return equipment ? (equipmentToMethod[equipment] || 'drip') : 'drip';
+  return equipment ? equipmentToMethod[equipment] || 'drip' : 'drip';
 }

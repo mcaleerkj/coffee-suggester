@@ -4,12 +4,7 @@ import { useState } from 'react';
 import { Share2, Check, Copy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { copyToClipboard, getBaseUrl } from '@/lib/utils';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 interface ShareButtonProps {
   slug: string;

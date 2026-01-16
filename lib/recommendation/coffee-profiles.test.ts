@@ -47,9 +47,7 @@ describe('Coffee Profiles', () => {
     });
 
     it('has pod-compatible profiles', () => {
-      const podProfiles = coffeeProfiles.filter((p) =>
-        p.suggestedBrewMethods.includes('pods')
-      );
+      const podProfiles = coffeeProfiles.filter((p) => p.suggestedBrewMethods.includes('pods'));
       expect(podProfiles.length).toBeGreaterThan(0);
     });
 

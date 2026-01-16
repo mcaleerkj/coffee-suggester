@@ -119,23 +119,27 @@ export const googlePlacesProvider: CafeProvider = {
       }
 
       // Transform Google Places results to Cafe objects
-      const cafes = (data.results || []).slice(0, limit).map((place: {
-        place_id: string;
-        name: string;
-        vicinity?: string;
-        geometry: { location: { lat: number; lng: number } };
-        opening_hours?: { open_now?: boolean };
-        types?: string[];
-      }) => ({
-        id: `google-${place.place_id}`,
-        name: place.name,
-        address: place.vicinity || 'Address not available',
-        lat: place.geometry.location.lat,
-        lng: place.geometry.location.lng,
-        isOpenNow: place.opening_hours?.open_now,
-        osmLink: `https://www.google.com/maps/place/?q=place_id:${place.place_id}`,
-        tags: place.types?.includes('cafe') ? ['cafe'] : [],
-      }));
+      const cafes = (data.results || [])
+        .slice(0, limit)
+        .map(
+          (place: {
+            place_id: string;
+            name: string;
+            vicinity?: string;
+            geometry: { location: { lat: number; lng: number } };
+            opening_hours?: { open_now?: boolean };
+            types?: string[];
+          }) => ({
+            id: `google-${place.place_id}`,
+            name: place.name,
+            address: place.vicinity || 'Address not available',
+            lat: place.geometry.location.lat,
+            lng: place.geometry.location.lng,
+            isOpenNow: place.opening_hours?.open_now,
+            osmLink: `https://www.google.com/maps/place/?q=place_id:${place.place_id}`,
+            tags: place.types?.includes('cafe') ? ['cafe'] : [],
+          })
+        );
 
       return {
         cafes,

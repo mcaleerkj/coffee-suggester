@@ -7,7 +7,15 @@
       "Bash(npm run db:seed:*)",
       "Bash(npm run dev:*)",
       "Bash(timeout /t 8)",
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: Coffee Suggester app\n\nA friendly web app that helps casual coffee drinkers discover their perfect coffee.\n\nFeatures:\n- Guided quiz \\(3-5 adaptive questions\\)\n- Personalized recommendations with explainable scoring\n- Brew tips for any equipment\n- Cafe finder via OpenStreetMap\n- Shareable results URLs\n- Privacy-first admin dashboard\n\nTech stack:\n- Next.js 14 \\(App Router\\), TypeScript, Tailwind CSS, shadcn/ui\n- Prisma with SQLite \\(PostgreSQL ready\\)\n- Vitest for testing\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git config:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(npm run format:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

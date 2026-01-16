@@ -118,7 +118,7 @@ function generateExplanation(
     }
   } else if (answers.flavorPreference === 'fruity') {
     if (profile.flavorProfile === 'fruity-bright') {
-      parts.push('its bright, fruity character is exactly what you\'re looking for');
+      parts.push("its bright, fruity character is exactly what you're looking for");
     }
   } else if (answers.flavorPreference === 'balanced') {
     parts.push('its well-rounded flavor profile offers something for everyone');
@@ -133,7 +133,7 @@ function generateExplanation(
 
   // Acidity note
   if (answers.acidityTolerance === 'low-acidity' && profile.acidityLevel === 'low') {
-    parts.push('it\'s gentle on the stomach with low acidity');
+    parts.push("it's gentle on the stomach with low acidity");
   }
 
   // Equipment match
@@ -146,8 +146,7 @@ function generateExplanation(
     parts.push('its balanced profile works well with your preferences');
   }
 
-  const explanation =
-    parts.length > 1 ? parts.slice(0, 2).join(', and ') : parts[0];
+  const explanation = parts.length > 1 ? parts.slice(0, 2).join(', and ') : parts[0];
 
   return `We recommend this because ${explanation}.`;
 }
@@ -168,10 +167,7 @@ function generateConfidenceStatement(score: number, profile: CoffeeRecommendatio
 /**
  * Generate cafe order script based on recommendation and preferences
  */
-function generateCafeOrderScript(
-  profile: CoffeeRecommendation,
-  answers: QuizAnswers
-): string {
+function generateCafeOrderScript(profile: CoffeeRecommendation, answers: QuizAnswers): string {
   const parts: string[] = ['Can I get'];
 
   // Size (default to medium)
@@ -226,7 +222,7 @@ function generateCafeOrderScript(
  */
 function generateUpgradeSuggestion(answers: QuizAnswers): string | undefined {
   if (answers.equipment === 'pods') {
-    return 'When you\'re ready to level up: try a simple pour-over setup (about $30). Same convenience, more flavor control, and your coffee will taste noticeably fresher.';
+    return "When you're ready to level up: try a simple pour-over setup (about $30). Same convenience, more flavor control, and your coffee will taste noticeably fresher.";
   }
   if (answers.equipment === 'none') {
     return 'Want to start making great coffee at home? A French press ($20-30) is foolproof and makes excellent coffee with minimal effort.';

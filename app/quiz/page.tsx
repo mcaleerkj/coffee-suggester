@@ -51,17 +51,17 @@ const questions = [
       {
         value: 'balanced',
         label: 'I like it all',
-        description: "Something in the middle works for me",
+        description: 'Something in the middle works for me',
       },
     ],
   },
   {
     id: 'coffeeContext',
     question: 'Do you usually make coffee at home or buy it at cafes?',
-    description: "This helps us give you relevant tips and suggestions.",
+    description: 'This helps us give you relevant tips and suggestions.',
     options: [
-      { value: 'home', label: 'Mostly at home', description: "I brew my own coffee" },
-      { value: 'cafe', label: 'Mostly at cafes', description: "I buy from coffee shops" },
+      { value: 'home', label: 'Mostly at home', description: 'I brew my own coffee' },
+      { value: 'cafe', label: 'Mostly at cafes', description: 'I buy from coffee shops' },
       { value: 'both', label: 'Both equally', description: 'A mix of homemade and cafe' },
     ],
   },
@@ -71,8 +71,7 @@ const questions = [
 const equipmentQuestion = {
   id: 'equipment',
   question: 'What coffee equipment do you have?',
-  description:
-    "Don't have anything? No worries! We can help with that too.",
+  description: "Don't have anything? No worries! We can help with that too.",
   options: [
     { value: 'none', label: 'None yet', description: 'Looking to start' },
     { value: 'drip', label: 'Drip machine', description: 'Standard coffee maker' },
@@ -89,7 +88,7 @@ const equipmentQuestion = {
 const cafeQuestion = {
   id: 'wantsCafeSuggestions',
   question: 'Want us to find great cafes near you?',
-  description: "We can suggest specialty coffee shops in your area.",
+  description: 'We can suggest specialty coffee shops in your area.',
   options: [
     { value: 'yes', label: 'Yes, please!', description: "I'd love some recommendations" },
     { value: 'no', label: 'No thanks', description: "I'll skip the cafe suggestions" },
@@ -294,7 +293,12 @@ export default function QuizPage() {
                   </Button>
                 </div>
 
-                <Button variant="ghost" size="sm" className="w-full" onClick={() => submitQuiz(answers)}>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="w-full"
+                  onClick={() => submitQuiz(answers)}
+                >
                   Skip cafe suggestions
                 </Button>
               </div>

@@ -132,7 +132,9 @@ export default async function ResultsPage({ params }: ResultsPageProps) {
                 <Coffee className="h-5 w-5 text-coffee-600" />
                 Your cafe order
               </CardTitle>
-              <CardDescription>Copy this and use it next time you&apos;re at a cafe</CardDescription>
+              <CardDescription>
+                Copy this and use it next time you&apos;re at a cafe
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="bg-coffee-50 p-4 rounded-lg flex items-start justify-between gap-4">

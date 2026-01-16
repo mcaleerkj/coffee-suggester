@@ -54,14 +54,14 @@ Open [http://localhost:3000](http://localhost:3000) to see the app.
 
 ### Environment Variables
 
-| Variable | Description | Required | Default |
-|----------|-------------|----------|---------|
-| `DATABASE_URL` | Database connection string | Yes | `file:./dev.db` |
-| `ADMIN_PASSWORD` | Password for `/admin` dashboard | Yes | - |
-| `NEXT_PUBLIC_APP_URL` | Public URL for share links | No | `http://localhost:3000` |
-| `GOOGLE_PLACES_API_KEY` | Optional Google Places API key | No | - |
-| `CAFE_SEARCH_RATE_LIMIT` | Requests per minute for cafe search | No | `30` |
-| `CAFE_CACHE_DURATION` | Cache duration in seconds | No | `3600` |
+| Variable                 | Description                         | Required | Default                 |
+| ------------------------ | ----------------------------------- | -------- | ----------------------- |
+| `DATABASE_URL`           | Database connection string          | Yes      | `file:./dev.db`         |
+| `ADMIN_PASSWORD`         | Password for `/admin` dashboard     | Yes      | -                       |
+| `NEXT_PUBLIC_APP_URL`    | Public URL for share links          | No       | `http://localhost:3000` |
+| `GOOGLE_PLACES_API_KEY`  | Optional Google Places API key      | No       | -                       |
+| `CAFE_SEARCH_RATE_LIMIT` | Requests per minute for cafe search | No       | `30`                    |
+| `CAFE_CACHE_DURATION`    | Cache duration in seconds           | No       | `3600`                  |
 
 ## Running Tests
 
@@ -95,6 +95,7 @@ npm run db:studio
 For production, switch to PostgreSQL:
 
 1. Update `prisma/schema.prisma`:
+
 ```prisma
 datasource db {
   provider = "postgresql"
@@ -103,11 +104,13 @@ datasource db {
 ```
 
 2. Update `DATABASE_URL` in your environment:
+
 ```
 DATABASE_URL="postgresql://user:password@localhost:5432/coffee_suggester?schema=public"
 ```
 
 3. Run migrations:
+
 ```bash
 npm run db:migrate
 ```
@@ -124,6 +127,7 @@ npm run db:migrate
 **Important**: For Vercel deployment with SQLite, you'll need to use PostgreSQL instead (Neon, Supabase, or Railway) since Vercel's serverless functions don't persist file storage.
 
 Recommended setup:
+
 - Database: [Neon](https://neon.tech/) (free tier available)
 - Set `DATABASE_URL` in Vercel to your Neon connection string
 
@@ -199,6 +203,7 @@ The recommendation engine uses a scoring system to match coffee profiles to user
 ### Coffee Profiles
 
 The engine includes 13+ curated coffee profiles covering:
+
 - Latin American (Brazilian, Colombian, Guatemalan, Costa Rican)
 - East African (Ethiopian, Kenyan)
 - Indonesian (Sumatran)
@@ -206,6 +211,7 @@ The engine includes 13+ curated coffee profiles covering:
 - Specialty options (Cold Brew Blend, Premium Pods)
 
 Each profile includes:
+
 - Flavor notes and characteristics
 - Roast level
 - Acidity and body levels
@@ -217,6 +223,7 @@ Each profile includes:
 Access the admin dashboard at `/admin` using your `ADMIN_PASSWORD`.
 
 Features:
+
 - Quiz completion metrics
 - Conversion rates
 - Popular flavor preferences
@@ -227,19 +234,24 @@ Features:
 ## API Endpoints
 
 ### `POST /api/quiz/submit`
+
 Submit quiz answers and get recommendations.
 
 ### `GET /api/cafes`
+
 Search for nearby cafes.
+
 - `lat` & `lng`: Coordinates
 - `city`: City name (will be geocoded)
 - `radius`: Search radius in meters (default: 2000)
 - `limit`: Max results (default: 10)
 
 ### `POST /api/analytics/track`
+
 Track analytics events.
 
 ### `GET /api/admin/analytics`
+
 Get analytics data (requires `Authorization: Bearer <ADMIN_PASSWORD>` header).
 
 ## Contributing
